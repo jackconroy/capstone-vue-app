@@ -5,9 +5,11 @@
     <img v-bind:src="beer.image" v-bind:alt="beer.name" /><br />
     <p>Style - {{ beer.style }}</p>
     <p>ABV - {{ beer.abv }}</p>
-    <p>Votes ? - {{ beer.votes }}</p>
-    <p>{{ beer.tasting_notes }}</p>
-    <router-link to="/beers">Back to all beers</router-link>
+    <p>Upvotes - {{ beer.upvotes }}</p>
+    <p>
+      Tasting Notes - {{ beer.tasting_notes }} <br /><br />
+      <router-link to="/beers">Back to all beers</router-link>
+    </p>
   </div>
 </template>
 
@@ -17,7 +19,7 @@ export default {
   data: function() {
     return {
       beer: {},
-      tasting_notes: [],
+      tastingNotes: [],
     };
   },
   created: function() {
@@ -26,8 +28,6 @@ export default {
       this.beer = response.data;
     });
   },
-  methods: {
-    sortTastingNotes() {},
-  },
+  methods: {},
 };
 </script>

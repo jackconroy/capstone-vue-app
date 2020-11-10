@@ -2,11 +2,15 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/beers">Beers!</router-link> |
+      <router-link to="/beers">Beers</router-link> |
       <router-link to="/signup">Signup</router-link> |
       <router-link to="/login">Login</router-link> |
       <router-link to="/logout">Logout</router-link> |
-      <router-link :to="`/users/${user.id}`">View your page!</router-link>
+      <span v-if="isLoggedIn()">
+        <router-link v-bind:to="`/users/${getUserId()}`">
+          My Profile</router-link
+        >
+      </span>
     </div>
     <router-view />
   </div>

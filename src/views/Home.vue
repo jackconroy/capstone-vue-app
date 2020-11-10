@@ -1,6 +1,10 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
+    <h2>
+      Please signup and start rating our beers and get some personalized
+      suggestions!
+    </h2>
   </div>
 </template>
 
@@ -10,7 +14,7 @@
 export default {
   data: function() {
     return {
-      message: "Welcome to Vue.js!",
+      message: "Welcome to BrewTender!",
     };
   },
   created: function() {},

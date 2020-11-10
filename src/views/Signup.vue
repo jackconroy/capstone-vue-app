@@ -29,6 +29,19 @@
           v-model="passwordConfirmation"
         />
       </div>
+      Tell us about your tastes!
+      <div v-for="tastingNote in tastingNotes">
+        <input
+          type="checkbox"
+          :id="tastingNote.id"
+          :value="tastingNote.id"
+          v-model="selectedTastingNoteIds"
+        />
+        <label :for="tastingNote.id">{{ tastingNote.keyword }}</label>
+      </div>
+      <br /><br />
+      <span>Selected Tasting Notes {{ selectedTastingNoteIds }}</span
+      ><br /><br />
       <input type="submit" class="btn btn-primary" value="Submit" />
     </form>
   </div>
@@ -46,7 +59,15 @@ export default {
       password: "",
       passwordConfirmation: "",
       errors: [],
+      tastingNotes: [],
+      selectedTastingNoteIds: [],
     };
+  },
+  created: function() {
+    axios.get("/api/tasting_notes").then((response) => {
+      this.tastingNotes = response.data;
+      console.log(response.data);
+    });
   },
   methods: {
     submit: function() {
@@ -56,6 +77,7 @@ export default {
         location: this.location,
         password: this.password,
         password_confirmation: this.passwordConfirmation,
+        tasting_note_ids: this.selectedTastingNoteIds,
       };
       axios
         .post("/api/users", params)

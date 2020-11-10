@@ -8,8 +8,22 @@
       Name: <input type="text" v-model="user.name" /><br />
       Email: <input type="text" v-model="user.email" /><br />
       Location: <input type="text" v-model="user.location" /><br />
-      <p>{{ user.tasting_notes }}</p>
+      Tell us about your tastes!
+      <div v-for="tastingNote in tastingNotes">
+        <input
+          type="checkbox"
+          :id="tastingNote.id"
+          :value="tastingNote.id"
+          v-model="user.selectedTastingNoteIds"
+        />
+        <label :for="tastingNote.id">{{ tastingNote.keyword }}</label>
+      </div>
+      <br /><br />
+      <span>Selected Tasting Notes {{ selectedTastingNoteIds }}</span
+      ><br /><br />
       <input type="submit" value="Update" />
+      <p>Or: Delete your profile! Please don't go!</p>
+      <button v-on:click="destroyUser(user)">Delete Profile</button>
     </form>
   </div>
 </template>
@@ -21,21 +35,30 @@ export default {
     return {
       user: {},
       errors: [],
+      tastingNotes: [],
+      selectedTastingNoteIds: [],
     };
   },
   created: function() {
     axios.get("/api/users/" + this.$route.params.id).then((response) => {
       console.log("users show", response);
       this.user = response.data;
+      this.selectedTastingNoteIds = this.user.tastingNotes.map(
+        (tastingNote) => tastingNote.id
+      );
+    });
+    axios.get("/api/tasting_notes").then((response) => {
+      this.tastingNotes = response.data;
+      console.log(response.data);
     });
   },
   methods: {
     updateUser: function(user) {
       var params = {
-        name: user.name,
-        email: user.email,
-        location: user.location,
-        url: user.url,
+        name: this.user.name,
+        email: this.user.email,
+        location: this.user.location,
+        tasting_note_ids: this.user.selectedTastingNoteIds,
       };
       axios
         .patch("/api/users/" + user.id, params)
@@ -47,6 +70,12 @@ export default {
           console.log("users update error", error.response);
           this.errors = error.response.data.errors;
         });
+    },
+    destroyUser: function(user) {
+      axios.delete("/api/users/" + user.id).then((response) => {
+        console.log("users destroy", response);
+        this.$router.push("/users");
+      });
     },
   },
 };
