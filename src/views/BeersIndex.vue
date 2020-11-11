@@ -3,6 +3,10 @@
     <h1>All Beers</h1>
     <div v-for="beer in beers">
       <h2>{{ beer.name }}</h2>
+      <p>Upvotes: {{ beer.upvotes }}</p>
+      <h3>{{ beer.brewery }}</h3>
+      <p>{{ beer.style }} | {{ beer.abv }}</p>
+      <p v-for="tastingNote in beer.tasting_notes">{{ tastingNote.keyword }}</p>
       <img v-bind:src="beer.image" v-bind:alt="beer.name" /><br />
       <router-link v-bind:to="`/beers/${beer.id}`"> More Info! </router-link>
     </div>
@@ -15,6 +19,7 @@ export default {
   data: function() {
     return {
       beers: [],
+      tastingNotes: [],
     };
   },
   created: function() {

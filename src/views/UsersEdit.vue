@@ -64,7 +64,7 @@ export default {
         .patch("/api/users/" + user.id, params)
         .then((response) => {
           console.log("users update", response.data);
-          this.$router.push("/users");
+          this.$router.push(`/users/${response.data.id}`);
         })
         .catch((error) => {
           console.log("users update error", error.response);
@@ -72,10 +72,12 @@ export default {
         });
     },
     destroyUser: function(user) {
-      axios.delete("/api/users/" + user.id).then((response) => {
-        console.log("users destroy", response.data);
-        this.$router.push("/users");
-      });
+      if (confirm("Are you sure you want to delete this account?")) {
+        axios.delete("/api/users/" + user.id).then((response) => {
+          console.log("users destroy", response.data);
+          this.$router.push("/users");
+        });
+      }
     },
   },
 };

@@ -9,8 +9,9 @@ export default {
   created: function() {
     delete axios.defaults.headers.common["Authorization"];
     localStorage.removeItem("jwt");
+    localStorage.removeItem("user_id");
     console.log("LOGGED OUT");
-    this.$router.push("/");
+    this.$router.push("/login");
   },
 };
 </script>
