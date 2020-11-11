@@ -24,7 +24,7 @@ export default {
   },
   created: function() {
     axios.get("/api/beers/" + this.$route.params.id).then((response) => {
-      console.log("beers show", response);
+      console.log("beers show", response.data);
       this.beer = response.data;
     });
   },

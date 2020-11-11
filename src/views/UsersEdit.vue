@@ -14,7 +14,7 @@
           type="checkbox"
           :id="tastingNote.id"
           :value="tastingNote.id"
-          v-model="user.selectedTastingNoteIds"
+          v-model="selectedTastingNoteIds"
         />
         <label :for="tastingNote.id">{{ tastingNote.keyword }}</label>
       </div>
@@ -40,16 +40,16 @@ export default {
     };
   },
   created: function() {
-    axios.get("/api/users/" + this.$route.params.id).then((response) => {
-      console.log("users show", response);
-      this.user = response.data;
-      this.selectedTastingNoteIds = this.user.tastingNotes.map(
-        (tastingNote) => tastingNote.id
-      );
-    });
     axios.get("/api/tasting_notes").then((response) => {
       this.tastingNotes = response.data;
       console.log(response.data);
+    });
+    axios.get("/api/users/" + this.$route.params.id).then((response) => {
+      console.log("users show", response.data);
+      this.user = response.data;
+      this.selectedTastingNoteIds = this.user.tasting_notes.map(
+        (tastingNote) => tastingNote.id
+      );
     });
   },
   methods: {
@@ -58,12 +58,12 @@ export default {
         name: this.user.name,
         email: this.user.email,
         location: this.user.location,
-        tasting_note_ids: this.user.selectedTastingNoteIds,
+        tasting_note_ids: this.selectedTastingNoteIds,
       };
       axios
         .patch("/api/users/" + user.id, params)
         .then((response) => {
-          console.log("users update", response);
+          console.log("users update", response.data);
           this.$router.push("/users");
         })
         .catch((error) => {
@@ -73,7 +73,7 @@ export default {
     },
     destroyUser: function(user) {
       axios.delete("/api/users/" + user.id).then((response) => {
-        console.log("users destroy", response);
+        console.log("users destroy", response.data);
         this.$router.push("/users");
       });
     },

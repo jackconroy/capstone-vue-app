@@ -5,6 +5,7 @@
       Please signup and start rating our beers and get some personalized
       suggestions!
     </h2>
+    <router-link to="/signup">Signup</router-link>
   </div>
 </template>
 

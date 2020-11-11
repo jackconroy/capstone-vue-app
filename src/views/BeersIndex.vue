@@ -19,7 +19,7 @@ export default {
   },
   created: function() {
     axios.get("/api/beers").then((response) => {
-      console.log("beers index", response);
+      console.log("beers index", response.data);
       this.beers = response.data;
     });
   },
