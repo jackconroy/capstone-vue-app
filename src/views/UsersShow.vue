@@ -1,17 +1,24 @@
 <template>
   <div class="users-show">
     <h2>Name - {{ user.name }}</h2>
-    <p>Location - {{ user.location }}</p>
     <p>Email - {{ user.email }}</p>
-    <p>Upvoted Beers - {{ user.upvoted_beers }}</p>
-    <p>
-      Preferred Tasting Notes -
-    </p>
-    <p v-for="tastingNote in user.tasting_notes">
+    <p>Location - {{ user.location }}</p>
+    <router-link to="/user_tasting_notes"> Taste Profile </router-link><br />
+    <h3>
+      Preferred Tasting Notes
+    </h3>
+    <div v-for="tastingNote in user.tasting_notes">
       {{ tastingNote.keyword }}
-    </p>
+    </div>
+    <br />
+    Upvoted Beers -
+    <div v-for="upvotedBeer in user.upvoted_beers">
+      {{ upvotedBeer.name }}
+    </div>
+    <br /><br />
 
     <router-link v-bind:to="`/users/${user.id}/edit`">Edit user</router-link
+    ><br /><router-link to="/user_tasting_notes"> Taste Profile </router-link
     ><br />
     <router-link to="/">Back to the homepage!</router-link>
   </div>
@@ -24,6 +31,7 @@ export default {
     return {
       user: {},
       tastingNotes: [],
+      upvotedBeers: [],
     };
   },
   created: function() {

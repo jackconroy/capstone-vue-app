@@ -8,6 +8,7 @@ import UsersShow from "../views/UsersShow.vue";
 import UsersEdit from "../views/UsersEdit.vue";
 import BeersIndex from "../views/BeersIndex";
 import BeersShow from "../views/BeersShow";
+import UserTastingNotesIndex from "../views/UserTastingNotesIndex.vue";
 
 Vue.use(VueRouter);
 
@@ -26,6 +27,11 @@ const routes = [
     path: "/users/:id/edit", 
     name: "users-edit", 
     component: UsersEdit 
+  },
+  {
+    path: '/user_tasting_notes',
+    name: 'user-tasting-notes-index',
+    component: UserTastingNotesIndex
   },
   {
     path: '/beers',

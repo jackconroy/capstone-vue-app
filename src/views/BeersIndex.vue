@@ -6,7 +6,10 @@
       <p>Upvotes: {{ beer.upvotes }}</p>
       <h3>{{ beer.brewery }}</h3>
       <p>{{ beer.style }} | {{ beer.abv }}</p>
-      <p v-for="tastingNote in beer.tasting_notes">{{ tastingNote.keyword }}</p>
+      <div v-for="tastingNote in beer.tasting_notes">
+        {{ tastingNote.keyword }}
+      </div>
+      <br />
       <img v-bind:src="beer.image" v-bind:alt="beer.name" /><br />
       <router-link v-bind:to="`/beers/${beer.id}`"> More Info! </router-link>
     </div>
@@ -15,7 +18,10 @@
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
+
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function() {
     return {
       beers: [],
