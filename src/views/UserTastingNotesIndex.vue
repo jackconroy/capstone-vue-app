@@ -1,6 +1,6 @@
 <template>
   <div class="user-tasting-notes-index">
-    <h1>Taste Profile</h1>
+    <h1>Taste Profile {{ user.name }}</h1>
     <div v-for="userTastingNote in userTastingNotes">
       <h3>
         Beer Recommendations For Tasting Note - {{ userTastingNote.keyword }}

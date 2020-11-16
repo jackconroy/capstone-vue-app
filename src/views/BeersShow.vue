@@ -1,9 +1,14 @@
 <template>
   <div class="beers-show">
     <h2>{{ beer.name }}</h2>
+    <!-- <div v-if="isLoggedIn()"> -->
     <h3>Your Vote = {{ beer.my_vote }}</h3>
+
     <button v-if="beer.my_vote !== 1" v-on:click="upvote()">Upvote!</button>
-    <button v-if="beer.my_vote !== -1" v-on:click="downvote()">Downvote</button>
+    <button v-if="beer.my_vote !== -1" v-on:click="downvote()">
+      Downvote
+    </button>
+    <!-- </div> -->
     <h3>{{ beer.brewery }}</h3>
     <img v-bind:src="beer.image" v-bind:alt="beer.name" /><br />
     <p>Style: {{ beer.style }}</p>
@@ -23,6 +28,7 @@ import axios from "axios";
 export default {
   data: function() {
     return {
+      user: {},
       beer: {},
       tastingNotes: [],
     };
@@ -34,6 +40,9 @@ export default {
     });
   },
   methods: {
+    isLoggedIn() {
+      this.$parent.isLoggedIn();
+    },
     vote(voteValue) {
       var params = {
         beer_id: this.beer.id,

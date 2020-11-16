@@ -16,6 +16,8 @@
         <router-link v-bind:to="`/users/${getUserId()}`">
           My Profile</router-link
         >
+        <br /><router-link to="/user_tasting_notes"> Taste Profile </router-link
+        ><br />
       </span>
     </div>
     <router-view />

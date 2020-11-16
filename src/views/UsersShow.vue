@@ -11,7 +11,7 @@
       {{ tastingNote.keyword }}
     </div>
     <br />
-    Upvoted Beers -
+    <h3>Upvoted Beers</h3>
     <div v-for="upvotedBeer in user.upvoted_beers">
       {{ upvotedBeer.name }}
     </div>

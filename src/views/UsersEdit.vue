@@ -19,8 +19,7 @@
         <label :for="tastingNote.id">{{ tastingNote.keyword }}</label>
       </div>
       <br /><br />
-      <span>Selected Tasting Notes {{ selectedTastingNoteIds }}</span
-      ><br /><br />
+
       <input type="submit" value="Update" />
       <p>Or: Delete your profile! Please don't go!</p>
       <button v-on:click="destroyUser(user)">Delete Profile</button>
@@ -75,7 +74,9 @@ export default {
       if (confirm("Are you sure you want to delete this account?")) {
         axios.delete("/api/users/" + user.id).then((response) => {
           console.log("users destroy", response.data);
-          this.$router.push("/users");
+          localStorage.removeItem("jwt");
+          localStorage.removeItem("user_id");
+          this.$router.push("/");
         });
       }
     },

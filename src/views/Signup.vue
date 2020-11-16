@@ -40,8 +40,7 @@
         <label :for="tastingNote.id">{{ tastingNote.keyword }}</label>
       </div>
       <br /><br />
-      <span>Selected Tasting Notes {{ selectedTastingNoteIds }}</span
-      ><br /><br />
+
       <input type="submit" class="btn btn-primary" value="Submit" />
     </form>
   </div>
