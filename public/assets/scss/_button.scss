@@ -1,0 +1,151 @@
+/*************************************buttons for bizwrap theme********************************/
+.btn{
+  font-weight:600;
+  font-size: 13px;
+  text-shadow: none;
+  padding: .65rem 1.5rem .6rem;
+  text-transform: uppercase;
+  @include transition (all 0.3s ease-in);
+  @include border-radius(5px);
+  @include box-shadow (none);
+  display: inline-block;
+  letter-spacing: inherit;
+  font-family: $title-font;
+  >i{
+    margin-left: .5rem;
+    vertical-align: middle;
+  }
+  &:hover{
+    transform: translateY(-1px);
+    -webkit-transform: translateY(-1px);
+  }
+  &:hover,&:focus,&.active,&.focus,&:active,&:active:focus,&.actvie:focus,{
+    outline: none;
+    box-shadow:none!important;
+  }
+  &.btn-lg{
+      padding: .95rem 2rem .9rem;
+  }
+  
+&.btn-big{
+  padding: 1.2rem 2.5rem 1.1rem;
+  font-size: .85rem;
+}
+&.btn-xs{
+  padding: .35rem .75rem .35rem;
+  font-size: 11px;
+}
+  &.btn-block{
+     width:100%;
+     display:block;
+  }
+  &.btn-radius{
+    padding: .65rem 2.5rem .6rem;
+    @include border-radius(100px);
+    &.btn-lg{
+      padding: .95rem 2.5rem .9rem;
+    }
+    &.btn-big{
+      padding: 1.25rem 2.75rem 1.2rem;
+    }
+  }
+}
+/*button white for colored background*/
+.btn-white{
+  background-color: transparent;
+  color:#fff;
+  border:2px solid #fff;
+  &:hover,&:active,&.active,&:active:focus{
+    background-color: #fff;
+    color:$darkcolor;
+  }
+}
+.btn-dark{
+    background-color: $darkcolor;
+    border-color: $darkcolor;
+    color:#fff;
+    &:hover,&:active,&.active,&:active:focus{
+         background-color:$graycolor;
+         border-color:$graycolor;
+    }
+}
+.btn-secondary{
+  background-color:$graycolor;
+  border-color: $graycolor;
+  color: #fff;
+  &:hover,&:active,&.active,&:active:focus{
+    background-color: $darkcolor;
+    color: #fff;
+    border-color: $darkcolor;
+  }
+}
+.btn-primary{
+  background-color: $primarycolor;
+  color: #fff;
+  border-color: $primarycolor;
+  &:hover,&:active,&.active,&:active:focus,&:not(:disabled):not(.disabled):active{
+    background-color: $primarycolor;
+    color: #fff;
+    border-color: $primarycolor;
+  }
+}
+/*button default*/
+.theme-btn-default{
+  background-color: #fff;
+  border: $default-border;
+  color:$graycolor;
+  &:hover,&:active,&.active,&:active:focus,&:not(:disabled):not(.disabled):active{
+    color:#fff;
+    background-color: rgba($graycolor,1);
+    border-color: rgba($graycolor,1);
+  }
+}
+
+/*theme color button*/
+.theme-btn-color{
+  background-color: $skincolor;
+  border-color:$skincolor;
+  color:#fff;
+  &:hover,&:active,&.active,&:active:focus,&:not(:disabled):not(.disabled):active{
+    color:#fff;
+    background-color: $skinactive;
+    border-color:$skinactive;
+  }
+}
+.theme-btn-color-outline{
+  border: 1px solid;
+  background-color: transparent;
+  border-color:$skincolor;
+  color:$skincolor;
+  &:hover,&:active,&.active,&:active:focus,&:not(:disabled):not(.disabled):active{
+    color:#fff;
+    background-color: $skincolor;
+    border-color:$skincolor;
+  }
+}
+.btn-dark-outline{
+    background: transparent;
+    color: $darkcolor;
+    border-color: $darkcolor;
+    &:hover,&:active,&.active,&:active:focus,&:not(:disabled):not(.disabled):active{
+        color: #fff;
+        background: $darkcolor;
+    }
+}
+.btn-outline-primary{
+  background: transparent;
+  color: $primarycolor;
+  border-color: $primarycolor;
+  &:hover,&:active,&.active,&:active:focus,&:not(:disabled):not(.disabled):active{
+      color: #fff;
+      background: $primarycolor;
+      border-color: $primarycolor;
+  }
+}
+/***btn radius***/
+
+.buttons{
+    button{
+        margin-bottom: 10px;
+    }
+}

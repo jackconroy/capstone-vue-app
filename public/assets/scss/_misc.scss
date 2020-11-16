@@ -1,0 +1,88 @@
+/*misc login register error pages*/
+.my-login-form{
+    padding: 30px 20px;
+    border:$default-border;
+    border-radius: 5px;
+}
+.form-btm-link a{
+    color:$skincolor;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+.form-btm-link span{
+    margin:0px 20px;
+    font-family: $secondry-font;
+    font-style: italic;
+    font-size: 23px;
+}
+/*error page*/
+
+.error-digit{
+    font-size:8rem;
+    line-height: 1;
+}
+.error-text{
+    h3{
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+    p{
+        font-size: 1.25rem;
+        font-weight: 300;
+        font-style: italic;
+    }
+}
+
+/*==================== ========*/
+/*========= Forms =========*/
+/*============================*/
+.form-box{
+    padding: 15px;
+    background: #fff;
+    @include box-shadow (0px 1px 2px $darkcolor);
+}
+.form-control.form-control-lg{
+    height: 55px;
+}
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.form-control{
+    display: inline-block;
+    @include border-radius(5px);
+    background-color: #fff;
+    border:1px solid #f5f5f5;
+    font-size: 13px;
+    min-height: 44px;
+    color: $graycolor;
+    font-family: $primary-font;
+    background: #FFF;
+    @include transition (all 0.3s ease-in);
+    &:focus{
+        border-color: rgba($graycolor,.5);
+        background: #FFF;
+        @include box-shadow (none);
+    }
+    &.rounded{
+        border-radius: 100px!important;
+    }
+}
+/* Enable custom submit button styling in Safari mobile */
+input[type='submit']
+{
+    -webkit-appearance: none;
+}

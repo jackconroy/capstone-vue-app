@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/beers">Beers</router-link> |
       <span v-if="!isLoggedIn()">
@@ -19,33 +19,106 @@
         <br /><router-link to="/user_tasting_notes"> Taste Profile </router-link
         ><br />
       </span>
-    </div>
+    </div> -->
+    <header class="header header-sticky header-light">
+      <nav class="navbar navbar-expand-lg yamm">
+        <div class="container">
+          <button
+            class="navbar-toggler navbar-toggler-right"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+            <img
+              src="/assets/img/logo-dark.png"
+              class="img-fluid logo-dark"
+              alt=""
+            />
+          </a>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto">
+              <li class="dropdown nav-item">
+                <a
+                  href="#"
+                  class="dropdown-toggle nav-link"
+                  data-toggle="dropdown"
+                  >Home</a
+                >
+                <ul class="dropdown-menu">
+                  <li>
+                    <router-link to="/signup" class="dropdown-item"
+                      >Signup</router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to="/login" class="dropdown-item"
+                      >Login</router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to="/logout" class="dropdown-item"
+                      >Logout</router-link
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="dropdown nav-item">
+                <a
+                  href="#"
+                  class="dropdown-toggle nav-link"
+                  data-toggle="dropdown"
+                  >Beers!</a
+                >
+                <ul class="dropdown-menu">
+                  <li>
+                    <router-link to="/beers" class="dropdown-item"
+                      >All Beers!</router-link
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown nav-item">
+                <a
+                  href="#"
+                  class="dropdown-toggle nav-link"
+                  data-toggle="dropdown"
+                  >Profile!</a
+                >
+                <ul class="dropdown-menu">
+                  <li>
+                    <router-link
+                      v-bind:to="`/users/${getUserId()}`"
+                      class="dropdown-item"
+                      >My Profile!</router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to="/user_tasting_notes" class="dropdown-item"
+                      >Taste Profile!</router-link
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--nav end-->
+    </header>
+
     <router-view />
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<style></style>
 
 <script>
 import axios from "axios";

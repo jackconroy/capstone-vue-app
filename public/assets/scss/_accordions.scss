@@ -1,0 +1,55 @@
+/*
+Accordoins style
+*/
+.accordion-header {
+    position: relative; }
+.accordion-header a {
+    position: relative;
+    display: block;
+    color: $skincolor;
+    font-family: $title-font;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: capitalize; 
+}
+.accordion-header a:before {
+        content: "\f3d0";
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-family: 'Ionicons'; 
+    @include transition(all .3s);
+    width: 8px;
+    height: 8px;
+    line-height: 8px;
+    text-align: center;
+}
+.accordion-header a.collapsed {
+    color: $darkcolor; }
+.accordion-header a.collapsed:before {
+      @include transform(rotate(-90deg));
+ }
+
+.card-accordion-simple .card {
+    border: 0px;
+    border-radius: 0px;
+    -webkit-border-radius: 0px; }
+
+.card-accordion-simple .card-header {
+    background-color: transparent;
+    border: 0px;
+    padding: 0px;
+    margin-bottom: 10px; }
+.card-accordion-simple .card-header a {
+    display: block;
+    padding: 10px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.05); }
+.card-accordion-simple .card-header a:before {
+    top: 18px;
+    right: 18px; }
+
+.card-accordion-simple .card-block {
+    padding: 20px 15px;
+    padding-top: 10px; }
+
+

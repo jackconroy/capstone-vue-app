@@ -1,0 +1,222 @@
+/***********************bootstrap pagination override***************************/
+
+.pagination {
+    li.page-item{
+        margin:.25rem;
+    >a.page-link{
+      border-radius: 30px;
+      &:hover,
+      &:focus {
+        box-shadow: none;
+        color:#fff;
+        background-color: $skincolor;
+        border-color: $skincolor;
+        &.current {
+          color: #fff;
+          background-color: #fefefe;
+          border-color: #f5f5f5;
+          cursor: default;
+        }
+      }
+      &.current {
+        color: #fff;
+        background-color: #f5f5f5;
+        cursor: default;
+      }
+    }
+  }
+  }
+  .page-link{
+      color: $graycolor;
+      font-size: 12px;
+      padding: .6rem 1.25rem;
+  }
+  .page-item.active .page-link{
+      background-color: $skincolor;
+      border-color: $skincolor;
+  }
+  .page-item:first-child .page-link{
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+  }
+  .page-item:last-child .page-link{
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+  }
+  /*pager**/
+.pager li>a{
+    color: $skincolor;
+}
+
+/*progress bar*/
+h3.heading-progress {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: .5rem;
+    line-height: 20px;
+    opacity: .8;
+}
+.progress {
+    height: 7px;
+    line-height: 7px;
+    @include box-shadow (none);
+    background: #f5f5f5;
+   @include border-radius(3px);
+   margin-bottom: 30px;
+}
+.progress-bar {
+    line-height: 7px;
+    @include box-shadow (none);
+}
+.progress-primary{
+    .progress-bar{
+        background: $skincolor;
+    }
+}
+
+.alert-danger{
+    font-size: 13px;
+    color: #dc3545;
+    font-weight: 400;
+    font-family: $primary-font;
+}
+#contactForm{
+  .alert-danger{
+      margin-bottom: 30px;
+      margin-top: -25px;
+  }  
+}
+
+/** badges **/
+.badge{
+    font-weight: 400;
+    padding: .25rem .5rem;
+    border-radius: 0px;
+}
+.badge-primary{
+    background-color: $skincolor;
+}
+.badge-secondary{
+    background-color: $graycolor;
+}
+.badge-dark{
+    background-color: $darkcolor;
+}
+.badge-default{
+    background-color: #f5f5f5;
+    color: $graycolor;
+}
+
+
+/** New Toast Notification */
+.toast{
+    z-index: 9999;
+    border:0;
+    background-color: #fff;
+    @include box-shadow(0px 0px 10px rgba($darkcolor,.15));
+    .toast-header{
+        background-color: transparent;
+        border-bottom:0px;
+        border-bottom: 1px solid rgba($darkcolor,.08);
+        color: $darkcolor;
+        position: relative;
+        .toast-icon{
+            font-size: 24px;
+            display: inline-block;
+            margin-right: .5rem;
+            vertical-align: middle;
+        }
+        strong{
+            font-family: $title-font;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        small{
+            font-size: 10px;
+            font-family: $title-font;
+            letter-spacing: 0;
+            font-weight: 400;
+            display: inline-block;
+            margin-left:.5rem;
+            opacity: .75;
+        }
+        .close{
+            @include transition(all .3s);
+            line-height: 0;
+            position: absolute;
+            top: .15rem;
+            height: 14px;
+            right: .5rem;
+            >i{
+                line-height: 0;
+            }
+        }
+    }
+    &.toast-fixed{
+        position: fixed;
+        z-index: 99999;
+        &.bottom-right{
+            bottom: 1.5rem;
+            right: 1.5rem;
+        }
+        &.bottom-left{
+            bottom: 1.5rem;
+            left: 1.5rem;
+        }
+        &.top-right{
+            top: 1.5rem;
+            right: 1.5rem;
+        }
+        &.top-left{
+            top: 1.5rem;
+            left: 1.5rem;
+        }
+    }
+    .toast-body{
+        font-size: 13px;
+        letter-spacing: 0;
+    }
+    &.toast-primary{
+        background-color: $skincolor;
+        color: rgba(#fff,.85);
+    }
+    &.toast-success{
+        background-color: #28a745;
+        color: rgba(#fff,.85);
+    }
+    &.toast-danger{
+        background-color: #dc3545;
+        color: rgba(#fff,.85);
+    }
+    &.toast-warning{
+        background-color: #ffc107;
+        color: rgba(#fff,.85);
+    }
+    &.toast-primary,&.toast-success,&.toast-danger{
+        a:not(.btn){
+            color: #fff;
+            &:hover{
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
+        .toast-header{
+            color: #fff;
+            border-bottom-color: rgba(#fff,.15);
+        }
+        .close{
+            color: #fff;
+        }
+    }
+}
+.close:not(:disabled):not(.disabled):focus, .close:not(:disabled):not(.disabled):hover{
+    opacity: 1;
+}
+.toast.toast-fullwidth{
+    width: 100%;
+    max-width:95%;
+    left:2.5%;
+    bottom: 1.5rem;
+    position: fixed;
+    z-index: 99999;
+}

@@ -1,0 +1,192 @@
+/**********************************************footer*****************************************/
+#footer{
+padding: 60px 0;
+background-color: $darkcolor;
+margin-top: -1px;
+  &.shop-footer{
+          background-color: #fefefe;
+          border-top: 2px solid #f5f5f5;
+      .footer-bottom:before{
+          border-top-color: #f5f5f5;
+      }
+      .footer-col{
+          h3{
+              color:$darkcolor;
+          }
+          p{
+              color:$graycolor;
+          }
+          form{
+              .form-control{
+                  background-color: #fff;
+                  border: 1px solid #f5f5f5;
+                  color:$darkcolor;
+              }
+          }
+          .social-btn li a i{
+              color:$graycolor;
+              border-color: $graycolor;
+              &:hover{
+                  border-color: $skincolor;
+                  color:#fff;
+              }
+          }
+          .post-list li a{
+              border-color:#f5f5f5;
+              color:$graycolor;
+              &:hover{
+                color: $skincolor;
+              }
+          }
+      }
+  }
+}
+.footer-col {
+  h3{
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 2rem;
+    &:first-letter{
+      border-bottom: 2px solid $skincolor;
+    }
+  }
+  p{
+    i{
+      display: inline-block;
+      font-size: 1.25rem;
+      position: relative;
+      line-height: 1;
+      width: 30px;
+      top: 3px;
+    }
+    &::first-letter{
+      text-transform: capitalize;
+    }
+  }
+  form {
+    .form-control,textarea{
+      background-color: transparent;
+      border: 1px solid rgba($graycolor,.15);
+      color:#fff;
+      margin-bottom: 15px;
+      &:focus{
+        background-color: $darkcolor;
+        border-color: rgba($graycolor,1);
+      }
+    }
+  }
+
+  .social-btn li a i{
+    color:$graycolor;
+    border: 1px solid $graycolor;
+    &:hover{
+      background-color: $skincolor;
+      border-color: $skincolor;
+      color: #fff;
+    }
+  }
+}
+
+.post-list li a{
+  color:$graycolor;
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba($graycolor,.15);
+}
+
+.footer-bottom{
+  padding-top: 60px;
+  position: relative;
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: 1px;
+    border-top: 1px solid rgba($graycolor,.25);
+  }
+  span{
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+/**************footer option ********************/
+#footer-option{
+  background: $darkcolor;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #212121, $darkcolor);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #212121, $darkcolor); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+  padding: 80px 0 0;
+  position: relative;
+  clear: both;
+  .footer-col{
+    .form-control{
+      height: 44px;
+      background-color: rgba($graycolor,.1);
+      color:$darkcolor;
+      border-radius: 5px;
+      margin-right: 2px;
+      margin-bottom: 0px;
+      color: #fff;
+    }
+  }
+}
+.input-group-btn{
+    height:44px;
+    .btn{
+        height: 44px;
+    }
+}
+.footer-col {
+  a{
+    &.tweet-ac{
+      display: block;
+      color:$skincolor;
+    }
+    &.tweet-day{
+      display: block;
+      color:$graycolor;
+      font-size: 0.8em;
+      opacity: .75;
+    }
+  }
+  .tweet-desc {
+    margin:15px 0;
+    i{
+      margin-right: 10px;
+    }
+  }
+  hr{
+    border-color:rgba($graycolor,.1);
+  }
+}
+
+.footer-copyright{
+  background: rgba($darkcolor,1);
+  margin-top: 40px;
+  padding: 30px 0 30px;
+  padding-bottom: 1rem;
+  p{
+    margin-bottom: 0;
+    font-size: 13px;
+    text-transform: capitalize;
+  }
+}
+.footer-nav{
+  margin: 0;
+  padding:0 .5rem;
+  text-align: right;
+  li {
+    padding: 0 .5rem;
+    a{
+      color:$graycolor;
+      font-size: 13px;
+      &:hover{
+        text-decoration: underline;
+        color: #fff;
+      }
+    }
+  }
+}

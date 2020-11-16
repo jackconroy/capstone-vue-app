@@ -7,9 +7,9 @@
       placeholder="Search by style"
       list="styles"
     />
-    <datalist id="styles">
+    <!-- <datalist id="styles">
       <option v-for="beer in beers">{{ beer.style }}</option>
-    </datalist>
+    </datalist> -->
     <button v-on:click="setSortAttribute('style')" class="btn btn-success mr-2">
       Sort by Style!
     </button>

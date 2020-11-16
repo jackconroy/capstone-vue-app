@@ -1,0 +1,43 @@
+/*call to actions*/
+/**newsletter**/
+.newsletter-subscribe{
+    border-top: 1px solid rgba($graycolor,.05);
+    margin-top: 3rem;
+    .form-subscribe{
+        position: relative;
+        .form-control{
+            border: 1px solid rgba($graycolor,.5);
+            background-color: transparent;
+            color: inherit;
+            height: 45px;
+            &:focus{
+                border: 1px solid rgba($graycolor,.85);
+            }
+            &.error{
+                border-color: #dc3545;
+            }
+        }
+        .btn{
+            position: relative;
+            padding-top: 0;
+            padding-bottom: 0;
+            line-height: 45px;
+        }
+    }
+}
+.cta-bg{
+    padding: 100px 0 90px;
+    background: $skincolor;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #c5839f, #654ea3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #c5839f, #654ea3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+.cta-bg h3{
+    color:#fff;
+    text-transform: capitalize;
+}
+@media(min-width:768px){
+    .cta-bg a{
+        margin-left: 100px;
+    }
+}

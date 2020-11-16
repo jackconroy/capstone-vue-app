@@ -1,0 +1,122 @@
+/*==========================portfolio ==========================*/
+.portfolio-sec{
+  color: $darkcolor;
+  background-color: #fff;
+  position: relative;
+  margin-bottom:20px;
+  &:hover{
+    img{
+      transform: translateY(-2px);
+    }
+  }
+}
+.portfolio-thumnail img{
+  width:100%;
+  border-radius: 5px 5px 0 0;
+  height: auto;
+  @include transition(all .3s);
+}
+.portfolio-desc{
+  border-radius: 0 0 5px 5px;
+  padding: 1.5rem 0;
+  border: $default-border;
+  border-top: 0px;
+}
+h4.portfolio-post-title{
+  margin-bottom: 1rem;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.portfolio-post-cat{
+  display: block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: $graycolor;
+}
+.portfolio-desc .theme-btn-default{
+  margin-bottom: -79px;
+}
+.flexslider{
+  @include box-shadow (none);
+}
+.portfolio-single-desc h3{
+  color:$darkcolor;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+
+/*cube portfolio */
+.cbp:after, .cbp-lazyload:after, .cbp-popup-loadingBox:after, .cbp-popup-singlePageInline:after {
+  border-top: 3px solid rgba($skincolor,0.8);
+}
+.cbp-l-grid-mosaic-flat .cbp-caption-activeWrap{
+    background-color:rgba($skincolor,0.7);
+}
+.cbp-l-filters-work .cbp-filter-item.cbp-filter-item-active{
+    background-color: $skincolor;
+}
+.portfolio-side-bar{
+  p strong{
+    font-weight: 600;
+    font-family: $title-font;
+    display: inline-block;
+    margin-right: .5rem;
+  }
+}
+.cbp-l-filters-work .cbp-filter-item{
+  color: $graycolor;
+  border: 1px solid #f5f5f5;
+  padding: .05rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-family: $primary-font;
+  &:hover {
+    color:#fff;
+    background: $graycolor;
+}
+}
+.cbp-l-grid-work-title{
+  font-family: $title-font;
+  color: $darkcolor;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .8rem;
+  &:hover {
+    color: $skincolor;
+}
+}
+.cbp-l-grid-mosaic-flat .cbp-l-caption-title{
+  font-family: $title-font;
+  font-size: .8rem;
+  font-weight: 600;
+}
+.cbp-l-grid-work-desc{
+  font-family: $primary-font;
+  color: $graycolor;
+}
+.cbp-l-grid-work.cbp-caption-zoom .cbp-caption-activeWrap{
+  background-color: rgba($skincolor,0.7);
+}
+.cbp-l-grid-work .cbp-item-wrapper{
+  border-top: 0px;
+  padding: 0;
+  padding-bottom: 25px;
+  box-shadow: none;
+}
+.cbp-l-filters-buttonCenter .cbp-filter-item.cbp-filter-item-active {
+  color: $skincolor;
+  border-color: $skincolor;
+  cursor: default;
+}
+.cbp-l-filters-buttonCenter .cbp-filter-counter{
+  background-color: $skincolor;
+}
+.cbp-l-filters-buttonCenter .cbp-filter-counter:after{
+  border-top-color: $skincolor;
+}
+.cbp-l-filters-buttonCenter .cbp-filter-item{
+  border-color: #f5f5f5;
+  border-radius: 30px;
+}

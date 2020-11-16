@@ -1,0 +1,38 @@
+/*****************bootstrap tabs overrides*****************************/
+/*tabs*/
+
+
+
+.nav-tabs  {
+    border-bottom: 0px;
+    .nav-item{
+        >.nav-link {
+            background: rgba(#f5f5f5,.5);
+            font-size: 13px;
+            font-weight: 500;
+            margin-right: 1px;
+            border-left: 1px solid #f5f5f5;
+            font-family: $title-font;
+            border-right: 1px solid #f5f5f5;
+            border-top-color: #f5f5f5;
+            border-bottom: none !important;
+           @include border-radius(0px);
+            padding: 12px 20px;
+            color: $graycolor;
+            position: relative;
+            &.active{
+                background-color: #fff;
+                color: $skincolor;
+                cursor: default;
+            }
+        }
+    }
+}
+ .tab-content {
+    padding: 30px;
+    border: $default-border;
+    background: #fff;
+    p:last-child{
+        margin-bottom:0px;
+    }
+}

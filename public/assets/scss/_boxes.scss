@@ -1,0 +1,157 @@
+/* icon boxes features/services boxes */
+.services-box{
+    @include border-radius(5px);
+    text-align: center;
+    margin-bottom: 10px;
+    padding:2rem 1.5rem;
+    border:$default-border;
+    i{
+      color:$skincolor;
+      font-size:2.75rem;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      width:5rem;
+      height: 5rem;
+      text-shadow: -5px -5px 4px rgba($skincolor, 0.15);
+      line-height: 1;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4rem;
+      border: 1px solid rgba($graycolor,.25);
+      @include transition (all 0.3s ease-in);
+    }
+    h4{
+      font-size:1rem;
+      margin-top: 2rem;
+      margin-block-end: 1rem;
+      text-transform: capitalize;
+    }
+    &:hover i{
+      border-color: $graycolor;
+      color: $graycolor;
+    }
+    p{
+        margin-bottom: 0px;
+    }
+  }
+  
+  /*services option 2*/
+  .services-icon {
+      text-align: center;
+  }
+  .services-icon i{
+    line-height: 1;
+    font-size: 2rem;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid $graycolor;
+    color: $graycolor;
+    border-radius: 100px;
+  }
+  /***services box new v1.4****/
+  .services-boxv2{
+    margin: 0;
+    .servicev2-icon{
+      float: left;
+      width:50px;
+      i{
+        color:$skincolor;
+        font-size: 30px;
+      }
+    }
+    .servicev2-text{
+      overflow: hidden;
+      h4{
+            color: $darkcolor;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 18px;
+      }
+    }
+  }
+  .features{
+      h3{
+          text-transform: capitalize;
+          margin-bottom: 1.25rem;
+      }
+
+  }
+  .services-text{
+    h4.heading-mini{
+        margin-bottom: .75rem;
+    }
+}
+/*team person*/
+.person-section{
+    border:$default-border;
+    overflow: hidden;
+    border-radius: 5px;
+    img{
+        display: block;
+        margin: 0 auto;
+    }
+    .social-btn{
+        margin-bottom: 0px;
+    }
+}
+.person-desc{
+    padding: 1.75rem;
+}
+.person-desc h3{
+    color:$darkcolor;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.person-desc span{
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: .03rem;
+    font-size: 12px;
+    color:$graycolor;
+    margin-left: 10px;
+}
+.person-desc p{
+    text-align: left;
+}  
+
+/*process*/
+.process-box{
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border: 1px solid #f5f5f5;
+    border-radius: 5px;
+    background-color: #fff;
+    @include transition(all.3s);
+    i{
+        font-size: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        width: 5rem;
+        height: 5rem;
+        box-shadow: 0px 0px 50px rgba($graycolor, 0.25);
+        line-height: 1;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3rem;
+        color: #fff;
+        background: $skincolor;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, $primarycolor, $skincolor);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, $primarycolor, $skincolor); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+    h4{
+        font-size:1rem;
+        margin-top: 2rem;
+        margin-bottom: 0px;
+    }
+    &:hover{
+        @include transform(translateY(-4px));
+    }
+}

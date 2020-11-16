@@ -1,17 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Bizwrap b4</title>
+    <link
+      rel="shortcut icon"
+      href="/assets/img/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    <!--plugins-->
+    <link href="/assets/css/plugins/plugins.css" rel="stylesheet" />
+    <!--Custom css-->
+    <link href="/assets/css/style.css" rel="stylesheet" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
+
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
     </noscript>
+
     <div id="app"></div>
-    <!-- built files will be auto injected -->
+
+    <!--bottom left toast-->
+    <!-- jQuery plugins. -->
+    <script src="/assets/js/plugins/plugins.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <!--Mailchimp demo files-->
+
+    <script src="/assets/mailchimp/mailchimp-custom.js"></script>
+    <script>
+      /** --------------------------------typed.js-----------------------------------**/
+      var typed = new Typed("#typed", {
+        stringsElement: "#typed-strings",
+        loop: true,
+        typeSpeed: 70,
+        backDelay: 1000,
+        shuffle: true,
+      });
+    </script>
   </body>
 </html>

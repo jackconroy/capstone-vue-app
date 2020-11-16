@@ -1,0 +1,112 @@
+
+  /**slider fullscreen**/
+body.fullscreen,html,.boxed-wrapper{
+    height: 100%;
+}
+.hero-fullscreen{
+width: 100%;
+height: 100%;
+display: flex;
+position: relative;
+overflow: hidden;
+background-image: url(../img/bg-4.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+&::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: rgba($primarycolor,.85);
+    z-index: 2;
+}
+.type-img{
+    position: relative;
+    right:15px;
+    bottom: -150px;
+    opacity: 1;
+}
+.container,.container-fluid{
+    height: 100%;
+    display: flex;
+    width: 100%;
+    z-index: 9;
+    position: relative;
+    >.row{
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+    .subtitle,h5{
+        opacity: .9;
+        color: #fff;
+    }
+}
+.type-wrap{
+    color: rgba(#fff,.9);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+    .type-text{
+        color: #fff;
+        text-decoration: underline;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+}
+&.hero-video{
+    position: relative;
+    overflow: hidden;
+    &::before{
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        background-color: rgba($primarycolor,.35);
+        z-index: 2;
+    }
+    .container-fluid{
+        position: relative;
+        z-index: 6;
+    }
+}
+}
+  /*------------------------- TYPED CSS ****************************/
+  .type-wrap{
+      font-size: 1.75rem;
+      font-weight: 300;
+      .type-text{
+          font-weight: 700;
+          color: $skincolor;
+      }
+  }
+  .typed-cursor{
+    color: $skincolor;
+      font-weight: 300;
+    opacity: 1;
+    animation: typedjsBlink 0.7s infinite;
+    -webkit-animation: typedjsBlink 0.7s infinite;
+    animation: typedjsBlink 0.7s infinite;
+  }
+  @keyframes typedjsBlink{
+    50% { opacity: 0.0; }
+  }
+  @-webkit-keyframes typedjsBlink{
+    0% { opacity: 1; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1; }
+  }
+  @-moz-keyframes typedjsBlink{
+    0% { opacity: 1; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1; }
+  }

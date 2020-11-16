@@ -1,0 +1,48 @@
+/* page title header / breadcrumbs**/
+.page-tree-bg,
+.page-tree-bg2 {
+  background-image: url("../img/bread-bg.png");
+  background-position: left top;
+  background-color: $skincolor;
+  padding: 100px 0 90px;
+  width: 100%;
+  position: relative;
+  background-attachment: fixed;
+  margin-bottom: 0px;
+  background-repeat:repeat;
+}
+
+.page-tree-bg2{
+    background-image: url("../img/bg-2.jpg");
+    padding-top:12rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &:after{
+        content: "";
+        background-image: url('../img/pattern.png');
+        background-repeat: repeat;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($graycolor,.75);
+        z-index: 1;
+    }
+    .container{
+        z-index: 9;
+        position: relative;
+    }
+}
+h3.page-tree-text{
+  text-align: center;
+  text-transform: capitalize;
+  text-shadow: 0px 0px 1px rgba($darkcolor,.25);
+  font-weight: 40;
+  color: #fff;
+  margin:0px;
+  font-style: italic;
+  letter-spacing: 0;
+  font-size: 1.75rem;
+  font-family: $secondry-font;
+}

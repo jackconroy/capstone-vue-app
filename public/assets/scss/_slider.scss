@@ -1,0 +1,320 @@
+/*flex slider*/
+.slider-reg{
+    width:100%;
+}
+.swiper-text.swiper-container{
+position: relative;
+padding-bottom: 3rem;
+}
+.swiper-pagination-bullet{
+    background-color: #f5f5f5;
+}
+.swiper-pagination-bullet-active{
+    background-color: $skincolor;
+}
+.swiper-fullwidth{
+    .swiper-slide{
+        position: relative;
+        overflow: hidden;
+        .swiper-overlay{
+            position: absolute;
+            left:0;
+            top:0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            background-color: rgba($darkcolor,.5);
+            background-image:url(../img/pattern.png);
+            background-repeat:repeat;
+            .swiper-title{
+                color: #fff;
+                font-size: 2.75rem;
+                letter-spacing: -1px;
+                font-weight: 600;
+                margin-bottom: 25px;
+                text-transform: capitalize;
+            }
+            p {
+                color: #fff;
+                font-family: $secondry-font;
+                font-size: 1.25rem;
+                margin-bottom:30px;
+                font-weight: 300;
+            }
+            .slider-text{
+                transition: all .35s ease-in-out;
+                -webkit-transition:  all .35s ease-in-out;
+                transition-delay: .5;
+                -webkit-transition-delay: .5s;
+                transform: translateY(50px);
+                -webkit-transform: translateY(50px);
+                opacity:0;
+            }
+        }
+        &.swiper-slide-active{
+            .slider-text{
+                transform: translateY(0);
+                -webkit-transform: translateY(0);
+                opacity:1;
+            }
+        }
+    }
+}
+.swiper-button-prev,.swiper-button-next{
+    font-size: 2rem;
+    width:40px;
+    height: 40px;
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+    &:before{
+        line-height: 1;
+    }
+    &:focus{
+        outline: 0!important;
+    }
+}
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+    background-image: none;
+    color:#fff;
+    font-family: "Ionicons";
+    &:before{
+        content:"\f3cf";
+    }
+}
+.swiper-button-next, .swiper-container-rtl .swiper-button-next{
+    background-image: none;
+    color:#fff;
+    font-family: "Ionicons";
+    &:before{
+        content: "\f3d1";
+    }
+}
+
+.slider-testimonials{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: $skincolor;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E100FF, $skincolor);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E100FF, $skincolor); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    p{
+        color:rgba(#fff,.9);
+        margin-bottom: 30px;
+        font-weight: 300;
+        font-family:$secondry-font;
+        font-size: 1.5rem;
+    }
+    h6{
+        color: #fff;
+        opacity: 1;
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+        small{
+            opacity: .75;
+        }
+    }
+}
+.swiper-container-horizontal>.swiper-pagination-progressbar, .swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{
+    bottom: 0;
+    top: auto;
+    height: 2px;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    background-color: $skincolor;
+}
+/**partners slider**/
+.partners{
+    padding: 100px 0;
+    background: #f9f9f9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #f9f9f9, #fff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #f9f9f9, #fff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    .swiper-partners{
+        padding-bottom: 4rem;
+    }
+    .swiper-slide{
+        img{
+            width: 100%;
+            max-width: 7rem;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            @include transition(all .3s);
+            &:hover{
+                @include transform(scale(1.1));
+            }
+        }
+        
+    }
+    .swiper-pagination-bullet{
+        background-color: $graycolor;
+        opacity: .5;
+        &.swiper-pagination-bullet-active-main{
+            background-color: $skincolor;
+            opacity: 1;
+        }
+    }
+}
+/********************
+Carousel Bootstrap4 slider
+********************/
+.carousel.carouselBizwrap{
+    height: 480px;
+    position: relative;
+    overflow: hidden;
+    .carousel-overlay{
+        position: absolute;
+        left:0;
+        top: 0;
+        width:100%;
+        height:100%;
+        z-index: 2;
+        background-color: rgba($skincolor,.5);
+        background-image: url('../img/pattern.png');
+        background-repeat: repeat;
+    }
+    .carousel-inner{
+        position: absolute;
+        left:0;
+        top: 0;
+        width:100%;
+        height:100%;
+        z-index:2;
+        .carousel-item{
+            position: absolute;
+            left:0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position: center center;
+        }
+    }
+    .carousel-control-prev,.carousel-control-next{
+        z-index: 12;
+        &:after{
+            content:"";
+            font-family: "Ionicons";
+            color:#fff;
+            font-size: 2rem;
+            position: absolute;
+        }
+    }
+    .carousel-control-prev:after{
+        content:"\f112";
+        left:15px;
+    }
+    .carousel-control-next:after{
+        content:"\f114";
+        font-family: "Ionicons";
+        right: 15px;
+    }
+    .carousel-content{
+        width:100%;
+        height: 100%;
+        position: absolute;
+        left:0;
+        top: 0;
+        z-index: 2;
+        display:table;
+        .container{
+            display: table-cell;
+            vertical-align: middle;
+            position: relative;
+            z-index: 9;
+        }
+        .pos-ab-image{
+            position: absolute;
+            right: 50px;
+            top: 0;
+        }
+        h3{
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+        p{
+         font-weight: 300;
+         color: #fff;
+         margin-bottom: 1.5rem;
+         opacity: .85;
+         font-size: 1.1rem;
+         font-family: $secondry-font;
+        }
+    }
+}
+
+
+
+/* swiper palarallax slider **/
+.swiper-parallax{
+    &.swiper-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: $darkcolor;
+        display: flex;
+        width: 100%;
+        &:before{
+            content: "";
+            background-image: url('../img/pattern.png');
+            background-repeat: repeat;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($darkcolor,.5);
+            z-index: 1;
+        }
+        .swiper-slide{
+            z-index:12;
+        }
+      }
+      .row{
+          width: 100%;
+      }
+    .title{
+        color: #fff;
+        font-size: 2.5rem;
+        text-transform: capitalize;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        font-family: $title-font;
+    }
+    .subtitle{
+        font-family: $secondry-font;
+        color: rgba(#fff,.85);
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+      .swiper-slide {
+          display: flex;
+          width: 100%;
+          height: 100%;
+        font-size: 18px;
+        color:#fff;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 40px 60px;
+      }
+      .parallax-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 130%;
+        height: 100%;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center;
+      }
+}
