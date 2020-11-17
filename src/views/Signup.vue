@@ -1,5 +1,113 @@
 <template>
   <div class="signup">
+    <section id="content-region-3" class="padding-40 page-tree-bg">
+      <div class="container">
+        <h3 class="page-tree-text">
+          Create an account
+        </h3>
+      </div>
+    </section>
+    <!--page-tree end here-->
+    <div class="space-70"></div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 ml-auto mr-auto">
+          <div class="my-login-form">
+            <form v-on:submit.prevent="submit()">
+              <h4 class="text-uppercase">Sign up</h4>
+              <ul>
+                <li class="text-danger" v-for="error in errors">{{ error }}</li>
+              </ul>
+              <hr />
+              <div class="row">
+                <div class="col-md-6 margin-btm-20">
+                  <input
+                    type="text"
+                    class="form-control"
+                    v-model="name"
+                    placeholder="Name.."
+                  />
+                </div>
+                <div class="col-md-6 margin-btm-20">
+                  <input
+                    type="email"
+                    class="form-control"
+                    v-model="email"
+                    placeholder="Email.."
+                  />
+                </div>
+                <div class="col-md-6 margin-btm-20">
+                  <input
+                    type="location"
+                    class="form-control"
+                    v-model="location"
+                    placeholder="Location.."
+                  />
+                </div>
+                <div class="col-md-6 margin-btm-20">
+                  <input
+                    type="password"
+                    class="form-control"
+                    v-model="password"
+                    placeholder="Password."
+                  />
+                </div>
+                <div class="col-md-6 margin-btm-20">
+                  <input
+                    type="password"
+                    class="form-control"
+                    v-model="passwordConfirmation"
+                    placeholder="Repeat password.."
+                  />
+                </div>
+                <!-- <h3>
+                  Tell us about your tastes!
+                </h3>
+                <br />
+                <div v-for="tastingNote in tastingNotes">
+                  <input
+                    type="checkbox"
+                    :id="tastingNote.id"
+                    :value="tastingNote.id"
+                    v-model="selectedTastingNoteIds"
+                  />
+                  <label :for="tastingNote.id">{{ tastingNote.keyword }}</label>
+                </div> -->
+                <h4 class="text-uppercase">Tell us about your tastes!</h4>
+                <div v-for="tastingNote in tastingNotes" class="col-md-12">
+                  <ul class="list-unstyled shipping-method">
+                    <li class="clearfix">
+                      <input
+                        type="checkbox"
+                        :id="tastingNote.id"
+                        :value="tastingNote.id"
+                        v-model="selectedTastingNoteIds"
+                      /><label :for="tastingNote.id"
+                        >{{ tastingNote.keyword }}
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-12 text-right">
+                  <button type="submit" class="btn theme-btn-color">
+                    Sign up
+                  </button>
+                </div>
+              </div>
+              <hr />
+              <div class="form-btm-link text-center">
+                <router-link to="/login">Already have an account? </router-link>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-70"></div>
+  </div>
+  <!-- <div class="signup">
     <form v-on:submit.prevent="submit()">
       <h1>Signup</h1>
       <ul>
@@ -43,7 +151,7 @@
 
       <input type="submit" class="btn btn-primary" value="Submit" />
     </form>
-  </div>
+  </div> -->
 </template>
 
 <script>
