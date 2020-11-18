@@ -12,7 +12,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 ml-auto mr-auto">
+        <div class="col-lg-12 ml-auto mr-auto">
           <div class="my-login-form">
             <form v-on:submit.prevent="submit()">
               <h4 class="text-uppercase">Sign up</h4>
@@ -74,8 +74,12 @@
                   />
                   <label :for="tastingNote.id">{{ tastingNote.keyword }}</label>
                 </div> -->
-                <h4 class="text-uppercase">Tell us about your tastes!</h4>
-                <div v-for="tastingNote in tastingNotes" class="col-md-12">
+                <h4 class="text-uppercase col-md-12 text-center ">
+                  Tell us about your tastes!
+                </h4>
+                <br /><br />
+                <hr />
+                <div v-for="tastingNote in tastingNotes" class="col-md-4">
                   <ul class="list-unstyled shipping-method">
                     <li class="clearfix">
                       <input
@@ -89,7 +93,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="col-md-12 text-right">
+                <div class="col-md-12 text-center">
                   <button type="submit" class="btn theme-btn-color">
                     Sign up
                   </button>

@@ -28,63 +28,41 @@
                   </li>
                 </ul>
               </div>
+              <router-link to="/user_tasting_notes">
+                Go To Your Taste Profile
+              </router-link>
+              <div class="sidebar-box">
+                <h4>Your Details</h4>
+                <p>
+                  Name
+                  <strong> - {{ user.name }}</strong
+                  ><br />
+                  Email <strong> - {{ user.email }} </strong>
+                  <br />
+                  Location
+                  <strong> - {{ user.location }}</strong
+                  ><br />
+                  <br />
+                  <router-link v-bind:to="`/users/${user.id}/edit`">
+                    Edit User
+                  </router-link>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <!--blog content-->
-        <div class="col-lg-3">
-          <div class="widget-search">
-            <form class="search-form"></form>
-          </div>
-        </div>
-        <!--sidebar-box-->
-        <hr />
-        <div class="sidebar-box">
-          <h4>Your Tasting Notes</h4>
-          <ul class="cat-list">
-            <li>
-              <a
-                data-toggle="tooltip"
-                data-placement="right"
-                title=""
-                data-original-title="10"
-                class="hover-color"
-                >Sports</a
-              >
-            </li>
-          </ul>
-        </div>
-        <hr />
-        <div class="sidebar-box">
-          <h4>Your Details</h4>
-          <p>
-            Name
-            <strong> - {{ user.name }}</strong
-            ><br />
-            Email <strong> - {{ user.email }} </strong>
-            <br />
-            Location
-            <strong> - {{ user.location }}</strong
-            ><br />
-            Name
-            <strong> - {{ user.name }}</strong
-            ><br />
-          </p>
-        </div>
-        <hr />
+
         <div class="sidebar-box">
           <h4>MOST RECENT BEER UPVOTES</h4>
           <div v-for="upvotedBeer in user.upvoted_beers" class="recent">
             <span>
-              <img v-bind:src="upvotedBeer.image" class="img-fluid" alt="" />
+              <router-link v-bind:to="`/beers/${upvotedBeer.id}`">
+                <img v-bind:src="upvotedBeer.image" class="img-fluid" alt=""
+              /></router-link>
             </span>
             {{ upvotedBeer.name }}
           </div>
         </div>
-        <div class="clearfix"></div>
-        <hr />
-        <div class="sidebar-box"></div>
-        <hr />
       </div>
     </div>
   </div>

@@ -43,11 +43,13 @@
                 <router-link to="/signup">Create new account</router-link>
               </div>
             </form>
+
             <!--login form end-->
           </div>
         </div>
       </div>
     </div>
+    <div class="space-70"></div>
     <!-- <div class="login">
     <section id="content-region-3" class="padding-40 page-tree-bg">
       <div class="container">
