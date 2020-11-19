@@ -35,11 +35,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <a class="navbar-brand" href="/">
-            <img
-              src="/assets/img/logo-dark.png"
-              class="img-fluid logo-dark"
-              alt=""
-            />
+            <h1>BrewTender</h1>
           </a>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -100,12 +96,12 @@
                     <router-link
                       v-bind:to="`/users/${getUserId()}`"
                       class="dropdown-item"
-                      >My Profile!</router-link
+                      >My Profile</router-link
                     >
                   </li>
                   <li>
                     <router-link to="/user_tasting_notes" class="dropdown-item"
-                      >Taste Profile!</router-link
+                      >Taste Profile</router-link
                     >
                   </li>
                 </ul>
@@ -117,111 +113,94 @@
       <!--nav end-->
     </header>
     <router-view />
-    <div id="footer">
+    <footer id="footer-option">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 margin-btm-20">
-            <div class="footer-col">
-              <h3>Bizwrap</h3>
-              <p>
-                aliqua.adipisicing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna. aliqua.adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna.
-              </p>
-            </div>
-            <div class="space-20"></div>
-            <div class="footer-col">
-              <h3>contact info</h3>
-              <p>
-                <i class="icon ion-md-home"></i> pearl tower,3rd
-                floor,jaipur,302012
-              </p>
-              <p><i class="icon ion-md-call"></i> +91 9887568614</p>
-              <p><i class="icon ion-ios-mail"></i> mail@domain.com</p>
-            </div>
-            <div class="space-20"></div>
-            <div class="footer-col">
-              <h3>Follow us</h3>
+          <div class="col-lg-3 margin-btm-20">
+            <div class="footer-col"></div>
+          </div>
+
+          <!--footer col end-->
+          <div class="col-lg-3 margin-btm-20">
+            <div class="footer-col margin-btm-20">
+              <h3>Find us</h3>
               <ul class=" list-inline social-btn">
                 <li class="list-inline-item">
-                  <a href="#"
+                  <a
+                    href="https://github.com/jackconroy/capstone-vue-app"
+                    target="blank"
                     ><i
-                      class="icon ion-logo-facebook"
+                      class="icon ion-logo-github"
                       data-toggle="tooltip"
                       data-placement="top"
                       title=""
-                      data-original-title="Like On Facebook"
+                      data-original-title="Follow On github"
                     ></i
                   ></a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#"
+                  <a
+                    href="https://github.com/jackconroy/capstone_project"
+                    target="blank"
                     ><i
-                      class="icon ion-logo-twitter"
+                      class="icon ion-logo-github"
                       data-toggle="tooltip"
                       data-placement="top"
                       title=""
-                      data-original-title="Follow On twitter"
+                      data-original-title="Follow On github"
                     ></i
                   ></a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#"
+                  <a
+                    href="https://www.linkedin.com/in/jack-a-conroy/"
+                    target="blank"
                     ><i
-                      class="icon ion-logo-googleplus"
+                      class="icon ion-logo-linkedin"
                       data-toggle="tooltip"
                       data-placement="top"
                       title=""
-                      data-original-title="Follow On googleplus"
-                    ></i
-                  ></a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#"
-                    ><i
-                      class="icon ion-logo-pinterest"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      title=""
-                      data-original-title="pinterest"
-                    ></i
-                  ></a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#"
-                    ><i
-                      class="icon ion-logo-skype"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      title=""
-                      data-original-title="skype"
+                      data-original-title="Follow On linkedin"
                     ></i
                   ></a>
                 </li>
               </ul>
             </div>
-            <!--footer social col-->
           </div>
-          <!--col-4 end-->
-
-          <!--latest post col end-->
-        </div>
-        <!--get in touch col end-->
-      </div>
-      <!--footer main row end-->
-      <div class="space-70"></div>
-      <div class="row">
-        <div class="col-md-12 text-center footer-bottom">
-          <a href="index.html">
-            <img src="assets/img/logo-white.png" alt=""
-          /></a>
-          <div class="space-20"></div>
-          <span>&copy;2019. All Right Reserved. Design by design_mylife</span>
+          <!--footer col end-->
+          <div class="col-lg-3 margin-btm-20">
+            <div class="footer-col">
+              <h3>contact info</h3>
+              <p><i class="icon ion-md-home"></i> Chicago, IL</p>
+              <p><i class="icon ion-md-call"></i> 999-900-9010</p>
+              <p><i class="icon ion-ios-mail"></i> BrewTender@gmail.com</p>
+            </div>
+          </div>
+          <!--footer col end-->
         </div>
       </div>
-      <!--footer copyright row end-->
-    </div>
-    <!--container-->
+      <div class="footer-copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2 footer-logo">
+              <router-link to="/">
+                BrewTender
+              </router-link>
+            </div>
+            <div class="col-md-5">
+              <p>&copy; Copyright 2020.all Right Reserved</p>
+            </div>
+            <div class="col-md-5 ">
+              <ul class="list-inline footer-nav">
+                <li class="list-inline-item">
+                  <router-link to="/">Home</router-link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
   <!--footer main end-->
 </template>

@@ -1,24 +1,5 @@
 <template>
-  <div class="beers-show">
-    <head>
-      <!-- Required meta tags -->
-      <meta charset="utf-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
-      <title>Bizwrap b4</title>
-      <!--plugins-->
-      <link href="/assets/css/plugins/plugins.css" rel="stylesheet" />
-      <!--cube portfolio-->
-      <link
-        href="/assets/cubeportfolio/css/cubeportfolio.min.css"
-        rel="stylesheet"
-      />
-      <!--Custom css-->
-      <link href="/assets/css/style.css" rel="stylesheet" />
-    </head>
-
+  <!-- <div class="beers-show">
     <section id="content-region-3" class="padding-40 page-tree-bg">
       <div class="container">
         <h3 class="page-tree-text">
@@ -26,7 +7,7 @@
         </h3>
       </div>
     </section>
-    <!--page-tree end here-->
+    
     <div class="space-70"></div>
     <div class="container portfolio-details">
       <div class="row">
@@ -45,7 +26,7 @@
         <div class="portfolio-single-desc">
           <h4 class="my-4">{{ beer.name }} - {{ beer.brewery }}</h4>
         </div>
-        <!--portfolio detail-->
+        
       </div>
       <div class="col-md-4">
         <div class="portfolio-side-bar">
@@ -78,6 +59,83 @@
           </p>
         </div>
       </div>
+    </div>
+  </div> -->
+  <div class="beers-show">
+    <section id="content-region-3" class="padding-40 page-tree-bg">
+      <div class="container">
+        <h3 class="page-tree-text"></h3>
+      </div>
+    </section>
+    <div class="space-70"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 ml-auto">
+          <div id="js-grid-slider-thumbnail" class="cbp ">
+            <div class="cbp-item">
+              <div class="cbp-caption">
+                <div class="cbp-caption-defaultWrap">
+                  <img v-bind:src="beer.image" alt="" />
+                  <div class="space-30"></div>
+                  <div>
+                    This is some text. Eventually we'd love to put a beer
+                    description here! With access to third party APIs this is
+                    something we'd love to see in a future version of
+                    BrewTender!
+                    <br /><br /><button
+                      v-if="beer.my_vote !== 1"
+                      v-on:click="upvote()"
+                      class="btn btn-radius theme-btn-color"
+                    >
+                      Upvote!
+                    </button>
+                    <button
+                      v-if="beer.my_vote !== -1"
+                      v-on:click="downvote()"
+                      class="btn btn-radius theme-btn-color"
+                    >
+                      Downvote
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 mr-auto">
+          <div class="product-detail">
+            <h3>{{ beer.name }}</h3>
+            <span class="price">{{ beer.brewery }}</span>
+            <ul class="list-unstyled text-left product-extra-info">
+              <li><span>Style</span> {{ beer.style }}</li>
+              <li><span>ABV</span> {{ beer.abv }}</li>
+              <li><span>Votes</span> {{ beer.my_vote }}</li>
+              <div class="space-30"></div>
+              <code>Tasting Notes:</code>
+              <ul class="cat-list col-md-12">
+                <li v-for="tastingNote in beer.tasting_notes">
+                  <a
+                    data-toggle="tooltip"
+                    data-placement="right"
+                    title=""
+                    data-original-title="10"
+                    class="hover-color"
+                    >{{ tastingNote.keyword }}</a
+                  >
+                </li>
+              </ul>
+            </ul>
+
+            <div class="space-30"></div>
+
+            <router-link to="/beers">
+              Back to All Beers
+            </router-link>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="space-50"></div>
     </div>
   </div>
 

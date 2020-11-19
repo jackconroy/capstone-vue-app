@@ -6,26 +6,6 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <img src="assets/img/hops2.jpg" alt="" class="img-fluid" />
-
-            <div class="container text-center">
-              <div class="row">
-                <div
-                  class="col-lg-10 slider-text col-md-10 col-12 mr-auto ml-auto"
-                >
-                  <h4 class="swiper-title">
-                    Creative Minimal Business Theme
-                  </h4>
-                  <p>
-                    Bizwrap theme built with modern and easy to use frameworks
-                  </p>
-                  <a href="#" class="btn btn-white btn-lg">Purchase Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--slide-->
-          <div class="swiper-slide">
-            <img src="assets/img/hops.jpeg" alt="" class="img-fluid" />
             <div class="swiper-overlay">
               <div class="container text-center">
                 <div class="row">
@@ -33,21 +13,51 @@
                     class="col-lg-8 slider-text col-md-10 col-12 mr-auto ml-auto"
                   >
                     <h4 class="swiper-title">
-                      You deserve stanning website
+                      Welcome to BrewTender
                     </h4>
                     <p>
-                      Bizwrap theme built with modern and easy to use frameworks
+                      Our goal is to help you discover your next favorite beer
+                      <br />
                     </p>
-                    <a href="#" class="btn btn-white btn-lg">Purchase Now</a>
+                    <router-link to="/signup" class="btn btn-white btn-lg"
+                      >Signup Now</router-link
+                    >
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- <div class="swiper-container swiper-fullwidth">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="assets/img/chi-beer.jpg" alt="" class="img-fluid" />
+                <div class="swiper-overlay">
+                  <div class="container text-center">
+                    <div class="row">
+                      <div
+                        class="col-lg-8 slider-text col-md-10 col-12 mr-auto ml-auto"
+                      >
+                        <h4 class="swiper-title">
+                          Welcome to BrewTender
+                        </h4>
+                        <p>
+                          We pick your beer so you can take a load off an enjoy
+                        </p>
+                        <router-link to="/signup" class="btn btn-white btn-lg"
+                          >Signup Now</router-link
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          <!-- </div> -->
           <!--slide-->
 
-          <div class="swiper-slide">
-            <img src="assets/img/bg-3.jpg" alt="" class="img-fluid" />
+          <!-- <div class="swiper-slide">
+            <img src="assets/img/taps.jpg" alt="" class="img-fluid" />
             <div class="swiper-overlay">
               <div class="container text-center">
                 <div class="row">
@@ -55,28 +65,25 @@
                     class="col-lg-8 slider-text col-md-10 col-12 mr-auto ml-auto"
                   >
                     <h4 class="swiper-title">
-                      Clean valid code for developers
+                      Welcome to BrewTender
                     </h4>
                     <p>
-                      Bizwrap theme looks perfect into all size of devices
+                      We pick your beer so you can take a load off an enjoy
                     </p>
-                    <a href="#" class="btn btn-white btn-lg">Purchase Now</a>
+                    <router-link to="/signup" class="btn btn-white btn-lg"
+                      >Signup Now</router-link
+                    >
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <!--slide-->
         </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-        <!-- Add Arrows -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
       </div>
     </section>
 
-    <div class="cta-bg">
+    <!-- <div class="cta-bg">
       <div class="container text-center">
         <h3>
           Hand Crafted Beer...suggestions
@@ -88,7 +95,7 @@
           >
         </h3>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

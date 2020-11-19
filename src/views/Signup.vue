@@ -2,13 +2,12 @@
   <div class="signup">
     <section id="content-region-3" class="padding-40 page-tree-bg">
       <div class="container">
-        <h3 class="page-tree-text">
-          Create an account
-        </h3>
+        <h3 class="page-tree-text"></h3>
       </div>
     </section>
     <!--page-tree end here-->
     <div class="space-70"></div>
+    <h3 class="header-sec text-center">Create an Account</h3>
 
     <div class="container">
       <div class="row">
@@ -75,8 +74,16 @@
                   <label :for="tastingNote.id">{{ tastingNote.keyword }}</label>
                 </div> -->
                 <h4 class="text-uppercase col-md-12 text-center ">
-                  Tell us about your tastes!
+                  Tell us about your tastes
                 </h4>
+                <div class="row col-lg-12 text-center">
+                  <p>
+                    Select as many tasting notes as you'd like, we will suggest
+                    beers based on your selections, and you can always change
+                    your taste profile later!
+                  </p>
+                  <br />
+                </div>
                 <br /><br />
                 <hr />
                 <div v-for="tastingNote in tastingNotes" class="col-md-4">

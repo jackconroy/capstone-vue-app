@@ -7,7 +7,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
-      <title>Bizwrap b4</title>
+      <title>BrewTender</title>
       <!--plugins-->
       <link href="/assets/css/plugins/plugins.css" rel="stylesheet" />
       <!--cube portfolio-->
@@ -19,12 +19,103 @@
       <link href="/assets/css/style.css" rel="stylesheet" />
     </head>
 
-    <div class="space-70"></div>
+    <!-- <datalist id="styles">
+      <option v-for="beer in beers">{{ beer.style }}</option>
+    </datalist> -->
     <section id="content-region-3" class="padding-40 page-tree-bg">
       <div class="container">
-        <h3 class="page-tree-text">
-          All Beers!
-        </h3>
+        <h3 class="page-tree-text"></h3>
+      </div>
+    </section>
+
+    <div class="space-70"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="cbp-l-filters-work">
+            <div
+              class="cbp-filter-item cbp-filter-item-active"
+              v-on:click="setSortAttribute('abv')"
+            >
+              Sort by abv
+            </div>
+            <div
+              class="cbp-filter-item cbp-filter-item-active"
+              v-on:click="setSortAttribute('style')"
+            >
+              Sort by style
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="sidebar-box">
+            <div class="widget-search">
+              <div class="search-form">
+                <input
+                  type="text"
+                  class="form-control"
+                  v-model="searchFilter"
+                  placeholder="Search brewery..."
+                />
+                <i
+                  class="icon ion-md-search"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title=""
+                  data-original-title="hit enter to search"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row product_grid">
+        <div
+          class="col-md-4 product_item"
+          v-for="beer in orderBy(
+            filterBy(beers, searchFilter, 'brewery'),
+            sortAttribute
+          )"
+        >
+          <div class="product-thumb">
+            <router-link v-bind:to="`/beers/${beer.id}`">
+              <img v-bind:src="beer.image" alt="" class="img-responsive"
+            /></router-link>
+            <div class="product-thumb-overlay">
+              <p>
+                <router-link v-bind:to="`/beers/${beer.id}`">
+                  More details</router-link
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="product-desc">
+            <h3>
+              <router-link v-bind:to="`/beers/${beer.id}`">{{
+                beer.brewery
+              }}</router-link>
+              <br />
+              Style - {{ beer.style }}
+            </h3>
+            <p>{{ beer.name }}</p>
+
+            ABV: {{ beer.abv }}
+          </div>
+        </div>
+      </div>
+
+      <div class="space-40"></div>
+      <div class="clearfix">
+        <div class="float-right">
+          <nav aria-label="Page navigation example"></nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <section id="content-region-3" class="padding-40 page-tree-bg">
+      <div class="container">
+        <h3 class="page-tree-text"></h3>
       </div>
     </section>
     <div class="space-70"></div>
@@ -34,24 +125,12 @@
           SHOW ALL
         </div>
         <div data-filter=".identity" class="cbp-filter-item">
-          IDENTITY
-          <div class="cbp-filter-counter"></div>
-        </div>
-        <div data-filter=".web-design" class="cbp-filter-item">
-          WEB DESIGN
-          <div class="cbp-filter-counter"></div>
-        </div>
-        <div data-filter=".graphic" class="cbp-filter-item">
-          GRAPHIC
-          <div class="cbp-filter-counter"></div>
-        </div>
-        <div data-filter=".logos" class="cbp-filter-item">
-          LOGO
+          {{ tastingNote }}
           <div class="cbp-filter-counter"></div>
         </div>
       </div>
-    </div>
-    <!-- <input
+    </div> -->
+  <!-- <input
       class="form-control col-7 mr-2"
       type="text"
       v-model="styleFilter"
@@ -59,7 +138,7 @@
       list="styles"
     /> -->
 
-    <!-- <datalist id="styles">
+  <!-- <datalist id="styles">
       <option v-for="beer in beers">{{ beer.style }}</option>
     </datalist>
     <button v-on:click="setSortAttribute('style')" class="btn btn-success mr-2">
@@ -69,7 +148,7 @@
       Sort by ABV!
     </button> -->
 
-    <!-- <div
+  <!-- <div
       v-for="beer in orderBy(
         filterBy(beers, styleFilter, 'style'),
         sortAttribute
@@ -87,13 +166,13 @@
       <router-link v-bind:to="`/beers/${beer.id}`"> More Info! </router-link>
     </div> -->
 
-    <div class="container">
+  <!-- <div class="container">
       <div class="row">
         <div class="col-md-12">
           <h3 class="heading-sec">Beers</h3>
         </div>
       </div>
-      <!--row-->
+
       <div
         v-for="beer in orderBy(
           filterBy(beers, styleFilter, 'style'),
@@ -123,9 +202,7 @@
           </div>
         </div>
       </div>
-      <!--row portfolio item-->
-    </div>
-  </div>
+    </div> -->
 </template>
 
 <script>
@@ -138,7 +215,7 @@ export default {
     return {
       beers: [],
       tastingNotes: [],
-      styleFilter: "",
+      searchFilter: "",
       sortAttribute: "",
     };
   },

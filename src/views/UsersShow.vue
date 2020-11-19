@@ -2,7 +2,7 @@
   <div class="users-show">
     <section id="content-region-3" class="padding-40 page-tree-bg">
       <div class="container">
-        <h3 class="page-tree-text">My Profile</h3>
+        <h3 class="page-tree-text"></h3>
       </div>
     </section>
     <!--page-tree end here-->
@@ -15,7 +15,10 @@
               <h1>{{ user.name }}</h1>
               <div class="sidebar-box">
                 <h4>Your Tasting Notes</h4>
-                <ul v-for="tastingNote in user.tasting_notes" class="cat-list">
+                <ul
+                  v-for="tastingNote in user.tasting_notes"
+                  class="cat-list col-md-12"
+                >
                   <li>
                     <a
                       data-toggle="tooltip"
@@ -44,28 +47,34 @@
                   ><br />
                   <br />
                   <router-link v-bind:to="`/users/${user.id}/edit`">
-                    Edit User
+                    Edit Details
                   </router-link>
                 </p>
+                <div class="sidebar-box text-left">
+                  <h4>MOST RECENT BEER UPVOTES</h4>
+                  <div
+                    v-for="upvotedBeer in user.upvoted_beers"
+                    class="recent col-lg-4"
+                  >
+                    <span>
+                      <router-link v-bind:to="`/beers/${upvotedBeer.id}`">
+                        <img
+                          v-bind:src="upvotedBeer.image"
+                          class="img-fluid"
+                          alt=""
+                      /></router-link>
+                    </span>
+                    {{ upvotedBeer.name }}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div class="sidebar-box">
-          <h4>MOST RECENT BEER UPVOTES</h4>
-          <div v-for="upvotedBeer in user.upvoted_beers" class="recent">
-            <span>
-              <router-link v-bind:to="`/beers/${upvotedBeer.id}`">
-                <img v-bind:src="upvotedBeer.image" class="img-fluid" alt=""
-              /></router-link>
-            </span>
-            {{ upvotedBeer.name }}
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <!-- <div class="users-show">
     <h2>Name - {{ user.name }}</h2>
     <p>Email - {{ user.email }}</p>
