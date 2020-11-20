@@ -74,12 +74,12 @@
                   href="#"
                   class="dropdown-toggle nav-link"
                   data-toggle="dropdown"
-                  >Beers!</a
+                  >Beers</a
                 >
                 <ul class="dropdown-menu">
                   <li>
                     <router-link to="/beers" class="dropdown-item"
-                      >All Beers!</router-link
+                      >All Beers</router-link
                     >
                   </li>
                 </ul>
@@ -89,7 +89,7 @@
                   href="#"
                   class="dropdown-toggle nav-link"
                   data-toggle="dropdown"
-                  >Profile!</a
+                  >Profile</a
                 >
                 <ul class="dropdown-menu">
                   <li>

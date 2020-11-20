@@ -101,6 +101,8 @@
             <p>{{ beer.name }}</p>
 
             ABV: {{ beer.abv }}
+            <br />
+            Score {{ beer.upvotes }}
           </div>
         </div>
       </div>

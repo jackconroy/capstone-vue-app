@@ -109,7 +109,7 @@
             <ul class="list-unstyled text-left product-extra-info">
               <li><span>Style</span> {{ beer.style }}</li>
               <li><span>ABV</span> {{ beer.abv }}</li>
-              <li><span>Votes</span> {{ beer.my_vote }}</li>
+              <li><span>Score</span> {{ beer.my_vote }}</li>
               <div class="space-30"></div>
               <code>Tasting Notes:</code>
               <ul class="cat-list col-md-12">
